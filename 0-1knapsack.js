@@ -14,8 +14,6 @@ const values = [20, 30, 10, 50];
 
 // Expected output is: weight 3 + 6 = 9, value 4 + 5 = 9
 
-let maximumProfit = 0;
-
 let dp = Array(weights.length + 1).fill(0).map((i) => Array(capacity + 1).fill(0))
 
 for (let i = 1; i < weights.length + 1; i++) {
@@ -29,7 +27,6 @@ for (let i = 1; i < weights.length + 1; i++) {
 		else {
 			let remainingCapacity = j - currentWeight;
 			dp[i][j] = Math.max(dp[i - 1][remainingCapacity] + currentValue, dp[i - 1][j]);
-			// dp[i][j] = dp[i - 1][j];
 		}
 	}
 }
@@ -38,7 +35,7 @@ console.table(dp)
 
 
 /** OUTPUT
- * ┌─────────┬───┬────┬────┬────┬────┬────┬────┬────┬────┬────┬─────┐
+┌─────────┬───┬────┬────┬────┬────┬────┬────┬────┬────┬────┬─────┐
 │ (index) │ 0 │ 1  │ 2  │ 3  │ 4  │ 5  │ 6  │ 7  │ 8  │ 9  │ 10  │
 ├─────────┼───┼────┼────┼────┼────┼────┼────┼────┼────┼────┼─────┤
 │    0    │ 0 │ 0  │ 0  │ 0  │ 0  │ 0  │ 0  │ 0  │ 0  │ 0  │  0  │
