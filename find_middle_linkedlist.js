@@ -1,6 +1,9 @@
 class LSNode {
-	data;
-	next;
+	/**
+	 *
+	 * @param {number} data
+	 * @param {LSNode} next
+	 */
 	constructor(data) {
 		this.data = data;
 		this.next = null;

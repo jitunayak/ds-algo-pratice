@@ -12,7 +12,6 @@ const capacity = 10;
 const weights = [1, 3, 4, 6];
 const values = [20, 30, 10, 50];
 
-// Expected output is: weight 3 + 6 = 9, value 4 + 5 = 9
 
 let dp = Array(weights.length + 1).fill(0).map((i) => Array(capacity + 1).fill(0))
 
